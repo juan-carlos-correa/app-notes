@@ -1,5 +1,7 @@
 # NoteApp
 
+![alt tag](https://user-images.githubusercontent.com/10777626/28959294-77d5e966-78bf-11e7-870d-11eab2eb2107.png)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
 
 ## Development server
