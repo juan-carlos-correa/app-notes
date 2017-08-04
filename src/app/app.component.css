@@ -1,0 +1,13 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+h1 {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 4em;
+  color: rgba(255, 255, 0, 1);
+  text-shadow: 2px 0 0 #000, -1px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+
+.menu {
+  text-align: center;
+}

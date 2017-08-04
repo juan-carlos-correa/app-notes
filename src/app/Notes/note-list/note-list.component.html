@@ -1,0 +1,36 @@
+<div>
+  <md-input-container>
+    <input mdInput placeholder="Search" (keyup)="search($event.target.value)">
+  </md-input-container>
+</div>
+
+<div>
+  <button (click)="addNote()" md-fab><md-icon>add</md-icon></button>
+</div>
+
+<div>
+  <md-card *ngFor="let note of notes" [style.background-color]='note.backgroundColor'>
+    <div >
+      <p>
+        <md-input-container>
+          <input mdInput placeholder="Title" value="{{note.title}}">
+        </md-input-container>
+      </p>
+      <p>
+        <md-input-container>
+          <textarea mdInput placeholder="Text">{{note.text}}</textarea>
+        </md-input-container>
+      </p>
+      <md-card-actions>
+        <button (click)="removeNote(note.id)" md-button><md-icon>delete</md-icon></button>
+      </md-card-actions>
+
+      <md-card-footer>
+        <span class="red" (click)="changeColor(note.id, 'red')">red</span>
+        <span class="green" (click)="changeColor(note.id, 'green')">green</span>
+        <span class="blue" (click)="changeColor(note.id, 'blue')">blue</span>
+        <span class="white" (click)="changeColor(note.id, 'white')">white</span>
+      </md-card-footer>
+    </div>
+  </md-card>
+</div>

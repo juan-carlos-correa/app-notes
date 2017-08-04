@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+md-card {
+  float: left;
+  width: auto;
+  max-width: 60%;
+  margin: 2em;
+  text-align: center;
+  padding: 2em;
+}
+
+md-card-footer {
+  background-color: white;
+  padding: 1em;
+}
+
+.red, .green, .white, .blue {
+  cursor: pointer;
+}
+
+.green {
+  color: green;
+}
+
+.white {
+  color: black;
+}
+
+.blue {
+  color: blue;
+}
+
+.red {
+  color: red;
+}

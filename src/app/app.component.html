@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+
+<div class="menu">
+  <button md-button [mdMenuTriggerFor]="menu">Menu</button>
+  <md-menu #menu="mdMenu">
+    <button md-menu-item routerLink="/notes">Notes</button>
+  </md-menu>
+</div>
+
+<router-outlet></router-outlet>
