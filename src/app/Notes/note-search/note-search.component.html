@@ -1,0 +1,19 @@
+<div *ngIf="notes">
+  <md-card class="example-card" *ngFor="let note of notes">
+  <md-card-header>
+    <md-card-title>
+      <md-input-container>
+        <input [(ngModel)]="note.title" mdInput placeholder="Title" value="{{note.title}}">
+      </md-input-container>
+    </md-card-title>
+  </md-card-header>
+  <md-card-content>
+    <md-input-container>
+      <textarea [(ngModel)]="note.content" mdInput placeholder="Content">{{note.content}}</textarea>
+    </md-input-container>
+  </md-card-content>
+  <md-card-actions>
+    <button (click)="removeNote(note.id)" md-button><md-icon>delete</md-icon></button>
+  </md-card-actions>
+</md-card>
+</div>

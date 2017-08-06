@@ -1,0 +1,7 @@
+<md-toolbar color="accent">
+  <span>{{title}}</span>
+  <md-input-container>
+    <input (keyup)="search($event.target.value)" mdInput placeholder="Search">
+  </md-input-container>
+</md-toolbar>
+<router-outlet></router-outlet>

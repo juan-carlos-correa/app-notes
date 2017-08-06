@@ -1,26 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Note } from '../shared/note';
 import { NoteService } from '../shared/note.service';
 
 @Component({
-  selector: 'notes',
-  templateUrl: './note-list.component.html',
-  styleUrls: ['./note-list.component.css'],
-  providers: []
+  selector: 'note-list',
+  templateUrl: 'note-list.component.html',
+  styleUrls: ['./note-list.component.css']
 })
+export class NoteListComponent implements OnInit {
 
-export class NoteListComponent implements OnInit{
-  title = 'Note App';
-  notes: Note[];
-  notesCopy: Note[];
+  @Input() notes: Note[];
 
-  constructor(private noteService: NoteService) { }
+  constructor(
+    private noteService: NoteService
+  ) {}
 
   getNotes(): void {
     this.noteService.getNotes().then(notes => this.notes = notes);
-    this.assignCopy();
   }
 
   ngOnInit(): void {
@@ -29,33 +26,13 @@ export class NoteListComponent implements OnInit{
 
   addNote(): void {
     this.noteService.addNote();
-    this.getNotes();
   }
 
-  removeNote(id: number): void {
+  removeNote(id: number){
     this.noteService.removeNote(id);
-    this.getNotes();
   }
 
   changeColor(id: number, color: string) : void {
     this.noteService.changeColor(id, color);
-    this.getNotes();
   }
-
-  assignCopy(){
-    this.notesCopy = Object.assign([], this.notes);
-    console.log(this.notesCopy)
-  }
-
-  search(value){
-    if(!value){
-      return this.getNotes();
-    }else{
-      this.notes = Object.assign([], this.notes).filter(
-        note => note.title.toLowerCase().indexOf(value.toLowerCase()) > -1
-      )
-    }
-    
-  }
-
 }

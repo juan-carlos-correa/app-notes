@@ -1,38 +1,38 @@
-body {
-  margin: 0;
-  font-family: Roboto, sans-serif;
-}
-
 md-card {
-  float: left;
   width: auto;
-  max-width: 60%;
-  margin: 2em;
-  text-align: center;
+  margin: 0.5em;
+  display: block;
+  float: left;
   padding: 2em;
 }
 
+.button-row {
+  margin: 2em 0;
+}
+
 md-card-footer {
-  background-color: white;
-  padding: 1em;
+  text-align: center;
+  padding: 0.5em;
 }
 
-.red, .green, .white, .blue {
+.lightgreen, .lightskyblue, .lightgrey, .lightsalmon {
   cursor: pointer;
+  margin: 0 0.5em;
+  font-weight: bold;
 }
 
-.green {
-  color: green;
+.lightgreen {
+  color: lightgreen;
 }
 
-.white {
-  color: black;
+.lightskyblue {
+  color: lightskyblue;
 }
 
-.blue {
-  color: blue;
+.lightgrey {
+  color: lightgrey;
 }
 
-.red {
-  color: red;
+.lightsalmon {
+  color: lightsalmon;
 }
