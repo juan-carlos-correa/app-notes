@@ -1,6 +1,6 @@
 export class Note {
   id: number;
-  title: string;
-  text: string;
+  title: String;
+  content: String;
   backgroundColor: string;
 }

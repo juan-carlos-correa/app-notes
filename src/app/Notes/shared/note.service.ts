@@ -6,35 +6,35 @@ import { NOTES } from './mock-notes';
 @Injectable()
 export class NoteService {
 
-  notes: Note[] = NOTES;
-  lastId = 11;
-  
+  lastId = NOTES.length;
+
   getNotes(): Promise<Note[]> {
-    return Promise.resolve(this.notes);
+    return Promise.resolve(NOTES);
   }
 
   addNote(): void {
     this.lastId++;
-    this.notes.push({ id: this.lastId, title: 'Add title', text: 'Add text', backgroundColor: 'white' });
+    let note: Note = {id: this.lastId, title: '', content: '', backgroundColor: 'white'}
+    NOTES.push(note);
   }
 
   removeNote(id: number): void {
-    this.notes = this.notes
-      .filter(note => note.id !== id);
+    let index = NOTES.findIndex(note => note.id === id)
+    NOTES.splice(index, 1);
   }
 
-  changeColor(id: number, color: string): void {
-    this.notes.forEach(function (note) {
+  search(text: string): Promise<Note[]>{
+    return this.getNotes()
+      .then(notes => notes.filter(notes => (
+        notes.title.toLowerCase().lastIndexOf(text) !== -1)
+        || notes.content.toLowerCase().lastIndexOf(text) !== -1
+      ))
+  }
+
+  changeColor(id: number, color: string): void{
+    NOTES.forEach(function(note) {
       if (note.id === id)
         note.backgroundColor = color;
     })
-  }
-
-  search(str: string): void {
-    // let notes = Object.assign({}, this.notes)
-    // this.notes = this.notes.filter(
-    //       note => note.title.search(str));
-    // console.log(this.notes)
-    
   }
 }
