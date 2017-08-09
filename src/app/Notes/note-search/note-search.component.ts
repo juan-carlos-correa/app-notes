@@ -11,7 +11,6 @@ import { NoteService } from '../shared/note.service';
   styleUrls: ['./note-search.component.css']
 })
 export class NoteSearchComponent implements OnInit {
-  public note: Note;
   public search: string;
   @Input() notes: Note[];
 
@@ -23,15 +22,10 @@ export class NoteSearchComponent implements OnInit {
   getNotes(): void {
     this.route.paramMap
       .switchMap((params: ParamMap) => this.noteService.search(params.get('search')))
-      .subscribe(notes => this.notes = notes);;
+      .subscribe(notes => this.notes = notes);
   }
 
   ngOnInit(){
-    this.getNotes();
-  }
-
-  removeNote(id: number){
-    this.noteService.removeNote(id);
     this.getNotes();
   }
 }

@@ -12,13 +12,15 @@ import { NoteListComponent } from './Notes/note-list/note-list.component';
 import { NoteService } from './Notes/shared/note.service';
 import { DashboardNormalComponent } from './Dashboard/dashboard-normal/dashboard-normal.component';
 import { AppRoutingModule }     from './app-routing.module';
+import { NoteSingle } from './Notes/note-single/note-single.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NoteSingle,
     NoteSearchComponent,
     NoteListComponent,
-    DashboardNormalComponent
+    DashboardNormalComponent,
   ],
   imports: [
     BrowserModule,

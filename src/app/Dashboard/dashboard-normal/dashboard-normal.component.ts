@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard-normal.component.css']
 })
 export class DashboardNormalComponent {
-  title = 'Note App Materialize';
+  @Input() title;
 
   constructor(private router: Router) {}
 

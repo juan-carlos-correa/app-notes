@@ -27,12 +27,4 @@ export class NoteListComponent implements OnInit {
   addNote(): void {
     this.noteService.addNote();
   }
-
-  removeNote(id: number){
-    this.noteService.removeNote(id);
-  }
-
-  changeColor(id: number, color: string) : void {
-    this.noteService.changeColor(id, color);
-  }
 }
